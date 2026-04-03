@@ -1,31 +1,354 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Mossad</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossiê Mossad</title>
 
-  <style>
-    body {
-      background: black;
-      color: white;
-      text-align: center;
-      font-family: Arial;
-      padding: 50px;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    h1 {
-      color: red;
-      font-size: 50px;
-    }
-  </style>
+        html {
+            scroll-behavior: smooth;
+        }
 
+        body {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            background: linear-gradient(to bottom, #030303, #101010);
+            color: #dddddd;
+        }
+
+        .container {
+            width: min(92%, 1100px);
+            margin: 25px auto;
+            background-color: rgba(10, 10, 10, 0.97);
+            border: 1px solid #2c2c2c;
+            box-shadow: 0 0 24px rgba(0, 0, 0, 0.8);
+            padding: 24px;
+        }
+
+        .topo {
+            text-align: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .topo h1 {
+            margin: 0;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #c7b26a;
+        }
+
+        .topo p {
+            margin-top: 10px;
+            font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+            color: #9a9a9a;
+            font-style: italic;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0 30px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #d8c27b;
+            border: 1px solid #3a3a3a;
+            background-color: #111111;
+            padding: 10px 14px;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #1c1c1c;
+            border-color: #c7b26a;
+        }
+
+        h2 {
+            color: #c7b26a;
+            border-left: 4px solid #c7b26a;
+            padding-left: 10px;
+            margin-top: 32px;
+            margin-bottom: 14px;
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+            line-height: 1.8;
+            text-align: justify;
+            margin-top: 0;
+        }
+
+        ul {
+            padding-left: 22px;
+            margin-top: 0;
+        }
+
+        li {
+            font-size: clamp(0.98rem, 1.4vw, 1.05rem);
+            line-height: 1.8;
+            margin-bottom: 6px;
+        }
+
+        .destaque,
+        .bloco {
+            margin-top: 18px;
+            padding: 18px;
+        }
+
+        .destaque {
+            background-color: #141414;
+            border-left: 4px solid #650000;
+        }
+
+        .bloco {
+            background-color: #111111;
+            border: 1px solid #262626;
+        }
+
+        .grid-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .card {
+            background-color: #121212;
+            border: 1px solid #2a2a2a;
+            padding: 16px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #dbc57c;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-top: 16px;
+            border: 1px solid #2d2d2d;
+            background-color: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .rodape {
+            text-align: center;
+            margin-top: 35px;
+            padding-top: 18px;
+            border-top: 1px solid #333;
+            color: #7d7d7d;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        strong {
+            color: #e0c97a;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 18px;
+            }
+
+            .grid-info {
+                grid-template-columns: 1fr;
+            }
+
+            p {
+                text-align: left;
+            }
+
+            .menu a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .container {
+                padding: 32px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<h1>MOSSAD</h1>
+    <div class="container">
+        <div class="topo">
+            <h1>Mossad</h1>
+            <p>Dossiê informativo sobre inteligência, sigilo e operações estratégicas</p>
+        </div>
 
-<p>Agora vai funcionar.</p>
+        <nav class="menu">
+            <a href="#oquee">O que é</a>
+            <a href="#origem">Origem</a>
+            <a href="#funcoes">Funções</a>
+            <a href="#estrutura">Estrutura</a>
+            <a href="#operacoes">Operações</a>
+            <a href="#video">Vídeo</a>
+            <a href="#conclusao">Conclusão</a>
+        </nav>
+
+        <div class="destaque">
+            <p>
+                <strong>Classificação:</strong> arquivo temático de estudo<br>
+                <strong>Área:</strong> inteligência internacional, espionagem e segurança estratégica
+            </p>
+        </div>
+
+        <section id="oquee">
+            <h2>O que é o Mossad</h2>
+            <p>
+                O Mossad é o serviço de inteligência externa de Israel, ligado à coleta de informações,
+                contraespionagem, monitoramento de ameaças e operações especiais fora do território israelense.
+                Seu nome completo é <strong>HaMossad leModi'in uleTafkidim Meyuhadim</strong>, traduzido como
+                “Instituto de Inteligência e Operações Especiais”.
+            </p>
+
+            <p>
+                Ao longo do tempo, a organização ganhou fama mundial por atuar de forma discreta, planejada e
+                altamente estratégica. Sua imagem é cercada por mistério, precisão e operações que marcaram a
+                história da inteligência internacional.
+            </p>
+        </section>
+
+        <section id="origem">
+            <h2>Origem e criação</h2>
+            <div class="bloco">
+                <p>
+                    O Mossad foi oficialmente criado em <strong>13 de dezembro de 1949</strong>, por iniciativa
+                    de <strong>David Ben-Gurion</strong>, pouco tempo depois da criação do Estado de Israel.
+                    A ideia era centralizar e coordenar melhor as ações de inteligência do país.
+                </p>
+
+                <p>
+                    Antes disso, já existiam estruturas de informação e defesa ligadas ao período pré-independência.
+                    Com a criação do Mossad, essas capacidades passaram a ser organizadas de maneira mais ampla,
+                    fortalecendo a atuação internacional de Israel.
+                </p>
+            </div>
+        </section>
+
+        <section id="funcoes">
+            <h2>Principais funções</h2>
+            <div class="grid-info">
+                <div class="card">
+                    <h3>Espionagem</h3>
+                    <p>Coleta de informações estratégicas fora de Israel para antecipar riscos e ameaças.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Contraespionagem</h3>
+                    <p>Ações para neutralizar infiltrações, vazamentos e atividades hostis de inteligência.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Operações especiais</h3>
+                    <p>Missões sensíveis que exigem sigilo, rapidez e planejamento de alto nível.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Segurança estratégica</h3>
+                    <p>Proteção dos interesses israelenses e monitoramento de ameaças internacionais.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="estrutura">
+            <h2>Estrutura e organização</h2>
+            <p>
+                O Mossad possui uma estrutura reservada e descentralizada, formada por setores especializados em
+                análise, recrutamento, relações externas e operações sensíveis. Essa organização favorece autonomia,
+                discrição e adaptação rápida em diferentes cenários.
+            </p>
+
+            <ul>
+                <li><strong>Kidon:</strong> unidade frequentemente associada a operações especiais.</li>
+                <li><strong>Tsomet:</strong> setor ligado ao recrutamento e controle de agentes.</li>
+                <li><strong>Tevel:</strong> área relacionada à cooperação internacional e contatos externos.</li>
+            </ul>
+        </section>
+
+        <section id="operacoes">
+            <h2>Operações marcantes</h2>
+            <div class="bloco">
+                <p>
+                    Entre os episódios mais conhecidos relacionados ao Mossad está a captura de
+                    <strong>Adolf Eichmann</strong>, localizado na Argentina e levado a Israel para julgamento.
+                    O caso reforçou a projeção internacional da agência.
+                </p>
+
+                <p>
+                    Outra referência histórica frequentemente citada é a <strong>Operação Ira de Deus</strong>,
+                    ligada à resposta israelense após o ataque contra atletas nos Jogos Olímpicos de Munique, em 1972.
+                </p>
+
+                <p>
+                    Esses episódios ajudaram a consolidar a imagem do Mossad como uma organização associada a
+                    planejamento minucioso, ação internacional e alto nível de sigilo.
+                </p>
+            </div>
+        </section>
+
+        <section id="video">
+            <h2>Vídeo sobre a história do Mossad</h2>
+            <p>
+                Abaixo está um vídeo incorporado sobre a história do Mossad. O player se adapta tanto ao celular
+                quanto ao computador.
+            </p>
+
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/Ix6In8dE12Y"
+                    title="História do Mossad"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section id="conclusao">
+            <h2>Conclusão</h2>
+            <div class="destaque">
+                <p>
+                    O Mossad se tornou uma das agências de inteligência mais conhecidas do mundo. Sua trajetória
+                    mistura sigilo, estratégia, operações internacionais e forte impacto histórico, tornando seu
+                    nome uma referência constante em debates sobre geopolítica e segurança.
+                </p>
+            </div>
+        </section>
+
+        <div class="rodape">
+            Documento de estudo • Página responsiva para celular e computador
+        </div>
+    </div>
 
 </body>
 </html>
