@@ -15,7 +15,7 @@ Este projeto consiste em um site informativo sobre o Mossad, apresentando inform
 
 O objetivo deste projeto é aplicar conhecimentos de desenvolvimento web e criar uma página organizada e responsiva.
 
-link de acesso: 27.0.0.1:5500/PROJETOS-HTML/projeto1%20pagina%20mossad.html
+link de acesso: https://github.com/Marchdev60/mossad-site.git
 
 ## Autor
 
